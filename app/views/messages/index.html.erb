@@ -4,6 +4,10 @@
   </div>
     
   <div class="panel-body">
+  　<%#(配列).each do |(配列の要素)|%>
+    <%#(配列の要素に対して行う処理)%>
+    <%#end%>
+    
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
       <%= message.body %>
@@ -11,6 +15,10 @@
     <% end %>
   </div>
 </div>
+
+<%#(ハッシュ).each do |(要素のキー), (要素の値)|%>
+<%#  (要素に対して行う処理)%>
+<%#end%>
 
 <%= form_for(@message, html: { class: "form-horizontal" }) do |f| %>
 
