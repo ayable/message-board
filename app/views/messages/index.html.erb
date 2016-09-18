@@ -1,2 +1,13 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+
+<h1>メッセージ一覧</h1>
+
+<% @MESSAGES.EACH DO |MESSAGE| %>
+  名前：  <%= MESSAGE.NAME %>
+  内容：  <%= MESSAGE.BODY %>
+  <BR>
+<% end %>
+
+<%= form_for(@message) do |f| %>
+
+<%# <h1>Messages#index</h1>%>
+<%# <p>Find me in app/views/messages/index.html.erb</p>
