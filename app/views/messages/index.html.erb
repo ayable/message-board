@@ -1,13 +1,15 @@
-
 <h1>メッセージ一覧</h1>
-
-<% @MESSAGES.EACH DO |MESSAGE| %>
-  名前：  <%= MESSAGE.NAME %>
-  内容：  <%= MESSAGE.BODY %>
-  <BR>
+<% @messages.each do |message| %>
+  名前:<%= message.name %>
+  内容:<%= message.body %>
+  <br>
 <% end %>
 
 <%= form_for(@message) do |f| %>
+  名前:
+  <%= f.text_field :name %>
 
-<%# <h1>Messages#index</h1>%>
-<%# <p>Find me in app/views/messages/index.html.erb</p>
+  内容:
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>
