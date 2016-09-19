@@ -4,10 +4,26 @@
   </div>
     
   <div class="panel-body">
-    <% @messages.each do |message| %>
+  　<%#(配列).each do |(配列の要素)|%>
+    <%#(配列の要素に対して行う処理)%>
+    <%#end%>
+     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
-      <%= message.body %>
+        <%= message.body %>
+        (<%= link_to "edit" , edit_message_path(message) %>
+         <%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+        )
       <br>
     <% end %>
   </div>
 </div>
+
+<%#(ハッシュ).each do |(要素のキー), (要素の値)|%>
+<%#  (要素に対して行う処理)%>
+<%#end%>
+<%= form_for(@message, html: { class: "form-horizontal" }) do |f| %>
+
+<% #部分テンプレートを読み込んでいる %>
+<%= render 'form' %>
+
+<% end %>
