@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class MessagesController < ApplicationController
   
-  before_action :set_message, only: [:edit, :update]
+  before_action :set_message, only: [:edit, :update, :destroy]
   
   def index
     @message = Message.new
