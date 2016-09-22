@@ -9,6 +9,7 @@
     <%#end%>
      <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
+        <%= message.age %>
         <%= message.body %>
         (<%= link_to "edit" , edit_message_path(message) %>
          <%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
@@ -19,7 +20,7 @@
 </div>
 
 <%#(ハッシュ).each do |(要素のキー), (要素の値)|%>
-<%#  (要素に対して行う処理)%>
+<%#  (要素に対してう処理)%>
 <%#end%>
 <%= form_for(@message, html: { class: "form-horizontal" }) do |f| %>
 
